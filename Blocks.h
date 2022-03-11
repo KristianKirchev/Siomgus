@@ -8,7 +8,7 @@ class Block
 {
 private:
     unsigned long long int parent;
-    char* value;
+    char value[100];
     size_t size;
     unsigned long long int checksum = 0;
 public:
@@ -17,7 +17,7 @@ public:
     Block(){};
     void set(unsigned long long int parent,void* value,size_t size){
         this->parent = parent;
-        this->value = (char*)value;
+        memcpy(this->value,value,sizeof(char)*size);
         this->size = size;
         this->find_checksum();
     };
@@ -45,17 +45,22 @@ public:
         std::cout<<"checksum = "<<this->checksum<<";\n}"<<std::endl;
     }
     void hex(){
-        char* list[28*8] = {0};
-        memcpy(list,(char *)this->parent,sizeof(unsigned long long));
-        list[0] = (this->parent<<(64-i*0))>>(64-i*7);
-        memcpy(list+sizeof(size_t),(char *)this->size,sizeof(size_t));
+        char list[28*8] = {0};
+        memcpy(list,&this->parent,sizeof(unsigned long long));
+        
+        memcpy(list+sizeof(unsigned long long),&this->size,sizeof(size_t));
         memcpy(list+sizeof(unsigned long long)+sizeof(size_t),this->value,sizeof(char)*size);
         for(size_t i = 0;i<28*8;i++){
-            printf("%x ",*(list+i));
+            std::cout<<(short int)list[i]<<",";
+            
         }
+        std::cout<<std::endl;
     }
-    void fromhex(){
-        //char* list[28*8] = {}
+    void fromhex(char list[28*8]){
+        memcpy(&this->parent,list,sizeof(unsigned long long));
+        memcpy(&this->size,list+sizeof(unsigned long long),sizeof(size_t));
+        memcpy(this->value,list+sizeof(unsigned long long)+sizeof(size_t),sizeof(char)*size);
+        this->find_checksum();
     }
 };
 
