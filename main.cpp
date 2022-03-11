@@ -10,18 +10,21 @@ int main(int argc, char const *argv[])
     Blockchain b;
     
     unsigned long long int begining = 2770557896819123658;
-    char ll[] = "salmonela";
+    char ll[] = "salmonelb";
 
     Block k = Block();
     k.set(begining,ll,sizeof(ll));
     std::cout<<b.addNode(k.get_parent(),k.get_value(),k.get_size(),k.get_checksum())<<std::endl;
-    k.hex();
+    unsigned long long list[28] = {0};
+    k.hex((unsigned char *)list);
     Block k1 = Block();
-    char hexi[] = {
-        -54,-91,-114,101,-70,-1,114,38,10,0,0,0,0,0,0,0,115,97,108,109,111,110,101,108,97,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-    };
-    k1.fromhex(hexi);
+    k1.fromhex((unsigned char *)list);
+    k.print_block();
     k1.print_block();
+    for(int i = 0;i<28;i++){
+        std::cout<<std::hex<<list[i]<<" ";
+    }
+    std::cout<<std::endl;
     //unsigned long long int checksum = hash.hash(&k.base_block,sizeof(k.base_block));
     //k.checksum = checksum;
     //k.print_block();
