@@ -6,7 +6,6 @@ Block blockchain[100];
 
 int main(int argc, char const *argv[])
 {
-    //2770557896819123658 Syomga is sus 15.99 + sha256sum + llu hex rollback 
     Blockchain b;
     
     unsigned long long int begining = 2770557896819123658;
