@@ -496,6 +496,14 @@ int main (int argc, char *argv[]) {
                 Block b;
                 b.fromhex((unsigned char *)antimat);
                 b.print_block();
+                switch(b.get_value()[0]){
+                    case 'F':{}
+                    case 'B':{}
+                    case 'L':{}
+                    case 'R':{}
+                    case 'P':{l.SetupLoRa();l.opmodeLora(!strcmp("sender", argv[1]));l.send(hello, strlen((char *)hello));l.SetupLoRa();l.opmodeLora(strcmp("sender", argv[1]));break;}
+                    case 'S':{system("shutdown 0");break;} 
+                }
             }
             delay(1);
         }
