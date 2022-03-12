@@ -1,5 +1,4 @@
-# Siomgus
-#HackTUESInfinity Project
+# Siomgus (HackTUES Infinity Project)
 
 ## Подтема
 Проектът е създаден за училищния хакатон Hack TUES Infinity с главна тема *"Space for everybody"*.
