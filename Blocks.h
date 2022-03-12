@@ -56,7 +56,7 @@ public:
     void fromhex(unsigned char list[28*8]){
         memcpy(&this->parent,list,sizeof(unsigned long long));
         memcpy(&this->size,list+sizeof(unsigned long long),sizeof(size_t));
-        
+        memcpy(&this->checksum,list+sizeof(unsigned long long)+sizeof(size_t),sizeof(unsigned long long));
         memcpy(this->value,list+sizeof(unsigned long long)*2+sizeof(size_t),sizeof(char)*size);
         this->find_checksum();
     }
