@@ -558,7 +558,7 @@ int main(int argc, char *argv[])
                 commands[filled].fromhex((unsigned char *)antimat);
                 filled++;
                 commands[filled-1].print_block();
-                switch (commands[filled].get_value()[0])
+                switch (commands[filled-1].get_value()[0])
                 {
                 case 'F':
                 {
