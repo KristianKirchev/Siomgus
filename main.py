@@ -1,5 +1,5 @@
 from __future__ import print_function, unicode_literals
-from PyInquirer import prompt, print_json
+from PyInquirer import prompt
 import serial
 
 ser = serial.Serial('/dev/ttyUSB0', 9600)
