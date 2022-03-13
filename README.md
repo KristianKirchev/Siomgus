@@ -18,3 +18,8 @@
 - Димо Йорданов 11Б - *софтуер*
 - Ивайло Георгиев 11Б - *хардуер*
 - Кристиан Кирчев 11Б - *по малко от всичко*
+## Бранчове
+|Бранчове|Значение  |
+|--|--|
+|![Bloker](https://github.com/KristianKirchev/Siomgus/tree/Blocker)  | Кода който ще се качи на разбери пай за контрол на марсохода  |
+|![Python Interface](https://github.com/KristianKirchev/Siomgus/tree/master)|Кода който ще праща към разперито|
