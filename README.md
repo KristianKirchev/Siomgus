@@ -1,5 +1,5 @@
 # Siomgus (HackTUES Infinity Project)
-
+Линк за презентация : ![Google Slides](https://docs.google.com/presentation/d/1I1QpjnYtTnG0d21gRRG9Qrj2G7I8DFPU/edit?usp=sharing&ouid=117364217083302483447&rtpof=true&sd=true)
 ## Подтема
 Проектът е създаден за училищния хакатон Hack TUES Infinity с главна тема *"Space for everybody"*.
 
